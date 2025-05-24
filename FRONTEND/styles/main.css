@@ -6,6 +6,10 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Navigation Bar */
 .nav-bar {
   display: flex;
