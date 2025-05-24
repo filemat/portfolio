@@ -151,6 +151,40 @@ body {
   color: #57BDFF;
 }
 
+/* Skills section */
+
+.skills-container {
+  margin-top: 10rem;
+}
+
+.skills-title { 
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Outfit';
+  font-size: 40px;
+}
+
+.skills-first-row {
+  margin-bottom: 4rem;
+}
+
+.skills-first-row,
+.skills-second-row {
+  transform: scale(0.9);
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.skills-badge {
+  transition: transform 0.4s ease;
+}
+
+.skills-badge:hover {
+  transform: scale(1.15);
+  transition: transform 0.4s ease;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
   .hero-container {
@@ -227,5 +261,26 @@ body {
     width: auto;
     padding: 0.75rem 2rem;
     font-size: 20px;
+  }
+
+  .skills-first-row,
+  .skills-second-row {
+    flex-wrap: wrap;
+    gap: 2rem;
+    transform: scale(1);
+  }
+
+  .skills-badge {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skills-title h1 {
+    font-size: 32px;
+  }
+
+  .skills-container {
+    padding: 0 1rem;
+    margin-top: 6rem;
   }
 }
