@@ -4,7 +4,7 @@ body  {
 }
 
 
- /* NAV SECTION */
+ /* NAV SECTION START */
 
 .nav-bar {
     font-family: "Outfit";
@@ -50,6 +50,28 @@ body  {
     gap: 8rem;
 }
 
+.nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background-color: #4E3DEB;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .nav-left a,
 .nav-left a:visited,
 .nav-left a:active,
@@ -61,3 +83,7 @@ body  {
 }
 
 /* NAV SECTION ENDING */
+
+/* HERO SECTION START */
+
+/* HERO SECTION STOP */
