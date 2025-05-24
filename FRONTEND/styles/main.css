@@ -1,53 +1,29 @@
-body  {
-    background-color: #0B132B;
-    color: white
+/* General Styles */
+body {
+  background-color: #0B132B;
+  color: white;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
 }
 
-
- /* NAV SECTION START */
-
+/* Navigation Bar */
 .nav-bar {
-    font-family: "Outfit";
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5rem;
-    font-weight: 700;
-    font-size: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5rem;
+  font-weight: 700;
+  font-size: 28px;
 }
 
-.nav-left, .nav-right {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-bar p{
-    margin: 0;
-}
-
-.nav-right-cv {
-    border: 1px solid #4E3DEB;
-    width: 297px;
-    height: 48px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: 28px;
-    align-items: center;
-    cursor: pointer;
-    background-color: transparent;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-.nav-right-cv:hover {
-    background-color: #4E3DEB;
-    border: 1px solid rgb(196, 187, 187);
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-left {
-    margin: 1rem;
-    display: flex;
-    gap: 8rem;
+  gap: 8rem;
 }
 
 .nav-link {
@@ -72,18 +48,184 @@ body  {
   width: 100%;
 }
 
-.nav-left a,
-.nav-left a:visited,
-.nav-left a:active,
-.nav-right a,
-.nav-right a:visited,
-.nav-right a:active {
+.nav-right-cv {
+  border: 1px solid #4E3DEB;
+  width: 297px;
+  height: 48px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.6s ease, color 0.6s ease, border 0.6s ease;
+}
+
+.nav-right-cv:hover {
+  background-color: #4E3DEB;
+  border-color: #0B132B;
+}
+
+.nav-right-cv,
+.nav-right-cv:visited,
+.nav-right-cv:hover,
+.nav-right-cv:active {
   text-decoration: none;
   color: white;
 }
 
-/* NAV SECTION ENDING */
+/* Hero Section */
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 4rem;
+}
 
-/* HERO SECTION START */
+.monitor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
-/* HERO SECTION STOP */
+.monitor-img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 200px rgba(164, 115, 255, 1));
+}
+
+.contact-container {
+  margin-top: 2rem;
+}
+
+.contact-btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  border: 1px solid #4E3DEB;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  background-color: #4E3DEB;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.contact-btn:hover {
+  color: #57BDFF;
+  background-color: #0B132B;
+}
+
+.hero-aboutme {
+  text-align: left;
+  margin-top: -5rem;
+}
+
+.hero-name {
+  font-weight: 700;
+  font-size: 65px;
+  font-family: 'Outfit';
+}
+
+.hero-name h1 {
+  margin: 0;
+}
+
+.hero-lastname {
+  margin-top: -1.5rem;
+  margin-left: 5rem;
+}
+
+.hero-title {
+  margin-left: 5rem;
+  font-weight: 700;
+  font-family: 'Roboto';
+}
+
+.hero-title h2 {
+  margin-top: 0.5rem;
+  color: #57BDFF;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .monitor-container {
+    margin: 4rem 0 0 0;
+  }
+
+  .monitor-img {
+    transform: scale(1);
+  }
+
+  .contact-container {
+    margin-top: 2rem;
+  }
+
+  .hero-name {
+    font-size: 36px;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .hero-name h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .hero-firstname,
+  .hero-lastname {
+    margin: 0;
+  }
+
+  .hero-title {
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero-title h2 {
+    margin-top: 1rem;
+  }
+
+  .contact-btn {
+    font-size: 18px;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    font-size: 22px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .nav-right {
+    margin-top: 1rem;
+  }
+
+  .nav-right-cv {
+    width: auto;
+    padding: 0.75rem 2rem;
+    font-size: 20px;
+  }
+}
