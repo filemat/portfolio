@@ -377,7 +377,31 @@ textarea {
   font-family: 'Roboto Flex';
 }
 
-div {
+/* Footer section */
+
+.footer-section {
+  background-color: black;
+  height: fit-content;
+  padding: 0.5rem;
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  padding-left: 1rem;
+}
+
+.footer-copyright {
+  font-family: 'Outfit';
+  font-size: 14px;
+  padding-left: 8rem;
+}
+
+.footer-socials-container {
+  background-color: linear-gradient(to right, #0B132B 21%, #005C97 100%);
+  display: flex;
+  gap: 1rem;
 }
 
 /* --- Responsive Design --- */
@@ -563,5 +587,32 @@ div {
     padding: 0.9rem 3.5rem;
     font-size: 18px;
     border-radius: 16px;
+  }
+  
+  .footer-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    padding: 0;
+  }
+
+  .footer-copyright {
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .footer-socials-container {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-socials-container img {
+    width: 32px;
+    height: 32px;
   }
 }
