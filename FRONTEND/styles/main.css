@@ -221,7 +221,7 @@ html {
 }
 
 .green-orb {
-  top: 12rem;
+  top: 15rem;
   right: 0;
 }
 
@@ -297,6 +297,80 @@ html {
 
 .project-card-spacer {
   flex-grow: 1;
+}
+
+/* Contact section */
+
+.contact-title {
+  margin-top: 22rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Outfit';
+  font-size: 40px;
+}
+
+.contact-title h1 {
+  margin-bottom: 0;
+}
+
+.contact-form-section {
+  width: 526px;
+  margin: auto;
+  padding-top: 1.5rem;
+}
+
+.form-label {
+  font-family: 'Roboto Flex';
+  font-size: 25px;
+  font-weight: normal;
+  padding-bottom: 1rem;
+  padding-top: 4rem;
+}
+
+.form-input input {
+  height: 2rem;
+}
+
+.form-input textarea {
+  height: 10rem;
+}
+
+.form-input input,
+.form-input textarea {
+  width: 93.16%;
+  padding: 0.8rem 1rem;
+  border-radius: 15px;
+  background-color: #0B132B;
+  border: 2px solid #65DBDF;
+  box-shadow: 0 0 10px #65DBDF;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.form-submit input:hover {
+  transform: scale(1.1);
+  background-color: rgb(1, 47, 77);
+  border: 1px solid rgb(1, 47, 77);
+  transition: transform 0.4s ease;
+}
+
+.form-submit input{
+  margin: 2rem 0;
+  padding: 1rem 5rem;
+  border-radius: 20px;
+  background-color: #063470;
+  color: white;
+  font-weight: 700;
+  font-family: 'Outfit';
+  font-size: 20px;
+  border: 1px solid #063470;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+div {
 }
 
 /* --- Responsive Design --- */
@@ -453,5 +527,34 @@ html {
   .green-orb {
     top: 20rem;
     right: -8rem;
+  }
+
+  .contact-title {
+    margin-top: 10rem;
+    font-size: 32px;
+  }
+
+  .contact-form-section {
+    width: 90%;
+    padding-top: 1rem;
+  }
+
+  .form-label {
+    font-size: 18px;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .form-input input,
+  .form-input textarea {
+    width: 95%;
+    font-size: 16px;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .form-submit input {
+    padding: 0.9rem 3.5rem;
+    font-size: 18px;
+    border-radius: 16px;
   }
 }
