@@ -189,6 +189,115 @@ html {
   transition: transform 0.4s ease;
 }
 
+/* Projects section */
+
+#projects {
+  position: relative;
+  z-index: 1;
+}
+
+.project-orb {
+  position: absolute;
+  pointer-events: none;
+  width: 450px;
+  z-index: 0;
+}
+
+.project-orb.glow {
+  filter: blur(160px) brightness(2);
+  opacity: 1;
+  z-index: 0;
+}
+
+.project-orb.shape {
+  filter: none;
+  opacity: 1;
+  z-index: 1;
+}
+
+.red-orb {
+  top: -14rem;
+  left: 0;
+}
+
+.green-orb {
+  top: 12rem;
+  right: 0;
+}
+
+.projects-title {
+  margin-top: 12rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Outfit';
+  font-size: 40px;
+}
+
+.projects-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.project-first-card h3,
+.project-second-card h3{
+  font-weight: 400;
+  padding-top: 1.8rem;
+  font-family: 'Roboto';
+  font-size: 35px;
+  text-align: left;
+  margin: 0;
+}
+
+.project-card-description {
+  font-weight: 400;
+  font-family: 'Roboto Flex';
+  font-size: 19px;
+  text-align: left;
+}
+
+.project-first-card,
+.project-second-card {
+  background-color: rgb(28, 37, 65, 0.4);
+  border-radius: 38px;
+  padding: 2rem 2rem;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-card-badges {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #57BDFF;
+  gap: 1.5rem;
+}
+
+.projects-card-badges p {
+  background-color: #0B132B;
+  margin: 0;
+  padding: 0.7rem 0.3rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.project-card-spacer {
+  flex-grow: 1;
+}
+
+div {
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
   .hero-container {
@@ -286,5 +395,62 @@ html {
   .skills-container {
     padding: 0 1rem;
     margin-top: 6rem;
+  }
+
+  .projects-title {
+    margin-top: 8rem;
+    font-size: 32px;
+  }
+
+  .projects-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .project-first-card,
+  .project-second-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 1.5rem;
+  }
+
+  .project-first-card h3,
+  .project-second-card h3 {
+    font-size: 28px;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .project-card-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .projects-card-badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .projects-card-badges p {
+    font-size: 14px;
+    padding: 0.6rem 0.2rem;
+  }
+
+  .project-orb {
+    width: 300px;
+  }
+
+  .red-orb {
+    top: -8rem;
+    left: -4rem;
+  }
+
+  .green-orb {
+    top: 20rem;
+    right: -8rem;
   }
 }
