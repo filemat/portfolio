@@ -291,11 +291,12 @@ html {
   white-space: nowrap;
 }
 
-.project-card-spacer {
-  flex-grow: 1;
+.projects-card-badges p:hover {
+  background: linear-gradient(to bottom, #0B132B 60%, #005C97 100%);
 }
 
-div {
+.project-card-spacer {
+  flex-grow: 1;
 }
 
 /* --- Responsive Design --- */
