@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=Roboto+Flex:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="preload" href="styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles/main.css"></noscript>
   <title>Filep Máté</title>
 </head>
 <body>
@@ -25,7 +28,7 @@
     <section id="hero">
       <div class="hero-container">
         <div class="monitor-container">
-          <img src="assets/monitor-clean.svg" alt="Hello There Monitor" class="monitor-img"/>
+          <img src="assets/monitor-clean.svg" alt="Hello There Monitor" loading="lazy" class="monitor-img"/>
           <div class="contact-container">
             <a href="#contact" class="contact-btn">CONTACT ME</a>
           </div>
@@ -172,6 +175,6 @@
       </div>
     </div>
   </footer>
-  <script src="contact.js"></script>
+  <script src="contact.js" defer></script>
 </body>
 </html>
