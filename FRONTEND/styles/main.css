@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
   overflow-x: hidden;
+  user-select: none;
 }
 
 html {
@@ -380,6 +381,13 @@ textarea {
   font-family: 'Roboto Flex';
 }
 
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #0B132B inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /* Footer section */
 
 .footer-section {
@@ -653,7 +661,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
     gap: 2rem;
   }
 
@@ -661,10 +669,12 @@ textarea {
     transform: scale(1);
     width: 100%;
     max-width: 320px;
+    filter: none;
   }
 
   .hero-aboutme {
     margin-top: 0;
+    margin-bottom: 3rem;
   }
 
   .hero-name {
@@ -703,6 +713,10 @@ textarea {
     transform: scale(1);
   }
 
+  .skills-first-row {
+    margin-bottom: 1.2rem;
+  }
+
   .skills-badge {
     width: 70px;
     height: 70px;
@@ -711,6 +725,10 @@ textarea {
   .projects-title {
     margin-top: 4rem;
     font-size: 28px;
+  }
+
+  .projects-container {
+    padding-top: 4rem;
   }
 
   .projects-card-container {
