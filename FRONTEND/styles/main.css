@@ -4,6 +4,7 @@ body {
   color: white;
   margin: 0;
   font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
 }
 
 html {
@@ -432,7 +433,6 @@ textarea {
   }
 
   .hero-name h1 {
-    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
@@ -482,6 +482,15 @@ textarea {
     font-size: 20px;
   }
 
+  .skills-container {
+    margin-top: 6rem;
+    padding: 0 1rem;
+  }
+
+  .skills-title h1 {
+    font-size: 32px;
+  }
+
   .skills-first-row,
   .skills-second-row {
     flex-wrap: wrap;
@@ -492,15 +501,6 @@ textarea {
   .skills-badge {
     width: 80px;
     height: 80px;
-  }
-
-  .skills-title h1 {
-    font-size: 32px;
-  }
-
-  .skills-container {
-    padding: 0 1rem;
-    margin-top: 6rem;
   }
 
   .projects-title {
@@ -537,8 +537,7 @@ textarea {
   .projects-card-badges {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
   }
 
   .projects-card-badges p {
@@ -557,7 +556,8 @@ textarea {
 
   .green-orb {
     top: 20rem;
-    right: -8rem;
+    right: 0;
+    max-width: 100%;
   }
 
   .contact-title {
@@ -572,8 +572,7 @@ textarea {
 
   .form-label {
     font-size: 18px;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
+    padding: 2rem 0 0.5rem;
   }
 
   .form-input input,
@@ -588,7 +587,7 @@ textarea {
     font-size: 18px;
     border-radius: 16px;
   }
-  
+
   .footer-section {
     flex-direction: column;
     align-items: center;
@@ -597,12 +596,12 @@ textarea {
     gap: 1.5rem;
   }
 
-  .footer-logo {
-    padding: 0;
+  .footer-logo,
+  .footer-copyright {
+    padding-left: 0;
   }
 
   .footer-copyright {
-    padding: 0;
     font-size: 13px;
   }
 
@@ -614,5 +613,188 @@ textarea {
   .footer-socials-container img {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .project-orb {
+    display: none;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 20px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-right-cv {
+    font-size: 18px;
+    padding: 0.6rem 1.2rem;
+    width: auto;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .monitor-img {
+    transform: scale(1);
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-aboutme {
+    margin-top: 0;
+  }
+
+  .hero-name {
+    font-size: 32px;
+  }
+
+  .hero-name h1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-firstname,
+  .hero-lastname {
+    margin: 0;
+  }
+
+  .hero-title {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .skills-container {
+    margin-top: 4rem;
+    padding: 0 1rem;
+  }
+
+  .skills-title h1 {
+    font-size: 28px;
+  }
+
+  .skills-first-row,
+  .skills-second-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    transform: scale(1);
+  }
+
+  .skills-badge {
+    width: 70px;
+    height: 70px;
+  }
+
+  .projects-title {
+    margin-top: 4rem;
+    font-size: 28px;
+  }
+
+  .projects-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .project-first-card,
+  .project-second-card {
+    width: 100%;
+    padding: 1rem;
+    max-width: 360px;
+  }
+
+  .project-first-card h3,
+  .project-second-card h3 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .project-card-description {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .projects-card-badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .projects-card-badges p {
+    font-size: 13px;
+    padding: 0.4rem 0.2rem;
+  }
+
+  .contact-title {
+    margin-top: 6rem;
+    font-size: 28px;
+  }
+
+  .contact-form-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .form-label {
+    font-size: 16px;
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .form-input input,
+  .form-input textarea {
+    font-size: 15px;
+    padding: 0.6rem 0.8rem;
+    width: 100%;
+  }
+
+  .form-submit input {
+    font-size: 16px;
+    padding: 0.8rem 2.5rem;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+
+  .footer-socials-container {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-socials-container img {
+    width: 28px;
+    height: 28px;
   }
 }
