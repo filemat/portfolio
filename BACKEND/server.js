@@ -1,7 +1,6 @@
 require('dotenv').config();
 const axios = require("axios");
 const express = require('express');
-const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const rateLimit = require("express-rate-limit");
