@@ -4,6 +4,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,7 +14,15 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/api/contact", async (req, res) => {
+const contactLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 perc
+  max: 3,
+  message: {
+    error: "Too many requests, please try again later.",
+  },
+});
+
+app.post("/api/contact", contactLimiter, async (req, res) => {
   const { fullName, emailName, messageContent, captchaToken } = req.body;
 
   if (!captchaToken) {
