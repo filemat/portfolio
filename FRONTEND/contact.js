@@ -17,7 +17,16 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     const result = await response.json();
 
     if (response.ok) {
-      alert("Message sent successfully!");
+      const successfullSend = document.querySelector(".message-status-container");
+      successfullSend.style.display = "block";
+      successfullSend.innerHTML = "<p>Message sent successfully!</p>";
+      successfullSend.classList.add("show")
+
+      setTimeout(() => {
+        successfullSend.style.display = "none";
+        successfullSend.innerHTML = "";
+      }, 5000);
+
       document.querySelector("form").reset();
     } else {
       alert(result.error || "Something went wrong.");

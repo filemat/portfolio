@@ -388,6 +388,28 @@ textarea:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+.message-status-container {
+  display: none;
+  background-color: rgb(40, 121, 175);
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 0.2rem 4rem;
+  width: fit-content;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.message-status-container.show {
+  opacity: 1;
+}
+
+.message-status-container p {
+  font-family: 'Roboto Flex';
+  font-size: 20px;
+  color: white;
+}
+
 /* Footer section */
 
 .footer-section {
@@ -576,7 +598,6 @@ textarea:-webkit-autofill {
   }
 
   .contact-form-section {
-    width: 90%;
     padding-top: 1rem;
   }
 
@@ -597,6 +618,10 @@ textarea:-webkit-autofill {
     font-size: 18px;
     border-radius: 16px;
   }
+
+  .message-status-container {
+      transform: scale(0.9);
+    }
 
   .footer-section {
     flex-direction: column;
@@ -792,6 +817,10 @@ textarea:-webkit-autofill {
   .form-submit input {
     font-size: 16px;
     padding: 0.8rem 2.5rem;
+  }
+
+  .message-status-container {
+    transform: scale(0.8);
   }
 
   .footer-section {
