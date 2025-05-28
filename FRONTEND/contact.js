@@ -5,13 +5,19 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const emailName = document.getElementById("emailName").value;
   const messageContent = document.getElementById("messageContent").value;
 
+  const captchaToken = grecaptcha.getResponse();
+  if (!captchaToken) {
+    alert("Please verify that you are not a robot!");
+    return;
+  }
+
   try {
     const response = await fetch("https://portfolio-backend-2gbm.onrender.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ fullName, emailName, messageContent }),
+      body: JSON.stringify({ fullName, emailName, messageContent, captchaToken}),
     });
 
     const result = await response.json();
@@ -28,6 +34,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
       }, 5000);
 
       document.querySelector("form").reset();
+      grecaptcha.reset();
     } else {
       alert(result.error || "Something went wrong.");
     }

@@ -1,5 +1,7 @@
 require('dotenv').config();
+const axios = require("axios");
 const express = require('express');
+const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 
@@ -12,13 +14,23 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/api/contact', async (req, res) => {
-  const { fullName, emailName, messageContent } = req.body;
+  const { fullName, emailName, messageContent, captchaToken } = req.body;
 
-  if (!fullName || !emailName || !messageContent) {
+  if (!fullName || !emailName || !messageContent || !captchaToken){
     return res.status(400).json({ error: 'All input fields are neccessary!' });
   }
 
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`;
+
   try {
+    const captchaRes = await fetch(verificationUrl, { method: 'POST' });
+      const captchaData = await captchaRes.json();
+
+      if (!captchaData.success) {
+        return res.status(403).json({ error: 'Captcha verification failed.' });
+      }
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
