@@ -64,3 +64,7 @@ app.post("/api/contact", async (req, res) => {
     return res.status(500).json({ error: "Server error. Try again later." });
   }
 });
+
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
+});
