@@ -12,7 +12,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   }
 
   try {
-    const response = await fetch("https://portfolio-backend-2gbm.onrender.com/api/contact", {
+    const response = await fetch("https://portfolio-production-1261.up.railway.app/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
