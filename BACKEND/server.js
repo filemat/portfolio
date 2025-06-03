@@ -62,7 +62,7 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
       from: emailName,
       to: process.env.EMAIL_USER,
       subject: `Portfolio message from ${fullName}`,
-      text: messageContent,
+      text: `Message received from portfolio site:\n\nName: ${fullName}\nEmail: ${emailName}\n\nMessage:\n${messageContent}`
     };
 
     await transporter.sendMail(mailOptions);
